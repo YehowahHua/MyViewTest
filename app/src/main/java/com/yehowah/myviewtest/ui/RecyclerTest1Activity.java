@@ -39,15 +39,10 @@ public class RecyclerTest1Activity extends AppCompatActivity {
 
 
     private  void initData(){
-        mDatas = new ArrayList<Integer>(Arrays.asList(R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background
-                ,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background));
+        mDatas = new ArrayList<Integer>(Arrays.asList(R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,
+                R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground
+                ,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground));
     }
-
-
-
-
-
 
 
 
