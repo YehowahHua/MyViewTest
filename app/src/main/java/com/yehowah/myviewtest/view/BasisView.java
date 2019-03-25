@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
-
+//book 自定义控件
 public class BasisView extends View {
 
 
@@ -37,9 +37,14 @@ public class BasisView extends View {
 //        paint.setStyle(Paint.Style.STROKE); //设置填充样式 stroke 描边
         paint.setStyle(Paint.Style.FILL); //设置填充样式 fill 填充
         paint.setStrokeWidth(50);           //设置画笔宽度
-
         canvas.drawCircle(190,200,150, paint);//半径150px
+
+        paint.setStyle(Paint.Style.STROKE);
         paint.setColor(0x7EFFFF00);//黄色
-        canvas.drawCircle(190,200,100, paint);
+        canvas.drawCircle(590,200,100, paint);
+
+
+
+
     }
 }
