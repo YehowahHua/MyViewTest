@@ -1,13 +1,14 @@
 package com.yehowah.myviewtest;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
+import com.yehowah.myviewtest.R;
 import com.yehowah.myviewtest.ui.MyViewActivity;
+import com.yehowah.myviewtest.ui.ReceiverTestActivity;
 import com.yehowah.myviewtest.ui.RecyclerTest1Activity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button recyclerViewTestBt;
     private Button rxjavaBt;
     private Button viewBt;
+    private Button receiverTestBt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerViewTestBt = (Button) findViewById(R.id.recyclerViewTestBt);
         viewBt = (Button) findViewById(R.id.viewBt);
         rxjavaBt = (Button) findViewById(R.id.rxjavaBt);
+        receiverTestBt = (Button) findViewById(R.id.receiverTestBt);
         recyclerViewTestBt.setOnClickListener(this);
         viewBt.setOnClickListener(this);
         rxjavaBt.setOnClickListener(this);
+        receiverTestBt.setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.viewBt:
                 Intent viewIntent = new Intent(this, MyViewActivity.class);
                 startActivity(viewIntent);
+                break;
+            case R.id.receiverTestBt:
+                Intent receiverIntent = new Intent(this, ReceiverTestActivity.class);
+                startActivity(receiverIntent);
                 break;
         }
     }

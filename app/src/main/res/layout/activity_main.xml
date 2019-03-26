@@ -4,25 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/recyclerViewTestBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="recyclerViewTestBt"/>
+
+        <Button
+            android:id="@+id/rxjavaBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rxjava操作"/>
+
+        <Button
+            android:id="@+id/viewBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义View"/>
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/recyclerViewTestBt"
+        android:id="@+id/receiverTestBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="recyclerViewTestBt"/>
-
-
-    <Button
-        android:id="@+id/rxjavaBt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rxjava操作"/>
-
-    <Button
-        android:id="@+id/viewBt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="自定义View"/>
-
+        android:text="动态注册广播"/>
 </LinearLayout>
