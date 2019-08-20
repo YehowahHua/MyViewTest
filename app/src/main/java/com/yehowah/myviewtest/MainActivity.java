@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import com.yehowah.myviewtest.R;
+
 import com.yehowah.myviewtest.ui.MyViewActivity;
 import com.yehowah.myviewtest.ui.ReceiverTestActivity;
 import com.yehowah.myviewtest.ui.RecyclerTest1Activity;
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i(TAG, "onCreate: ----"+getApplication());
         initView();
     }
 

@@ -2,6 +2,7 @@ package com.yehowah.myviewtest.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,19 +11,19 @@ import com.yehowah.myviewtest.MyRecyclerAdapter;
 import com.yehowah.myviewtest.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class RecyclerTest1Activity extends AppCompatActivity {
     private static final String TAG = "RecyclerTest1Activity";
     private RecyclerView mRecyclerView;
-    private List<Integer> mDatas;
+    private List<String> mDatas;//List<Integer>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_test1);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyView_content);
+
         initData();
+        initView();
         //设置布局管理器
 //        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);//horizontal
@@ -34,14 +35,24 @@ public class RecyclerTest1Activity extends AppCompatActivity {
         //设置适配器
         mRecyclerView.setAdapter(new MyRecyclerAdapter(this,mDatas));
 
+        //设置item间的分隔线,使用自带的DividerItemDecoration
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+    }
 
+    private void initView() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyView_content);
     }
 
 
     private  void initData(){
-        mDatas = new ArrayList<Integer>(Arrays.asList(R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,
-                R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground
-                ,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground));
+//        mDatas = new ArrayList<Integer>(Arrays.asList(R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,
+//                R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground
+//                ,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground));
+
+        mDatas = new ArrayList<String>();
+        for (int i = 'A'; i <='z' ; i++) {
+            mDatas.add(""+(char)i);
+        }
     }
 
 

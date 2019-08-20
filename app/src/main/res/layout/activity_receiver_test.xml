@@ -7,6 +7,29 @@
     android:orientation="vertical"
     tools:context=".ui.ReceiverTestActivity">
 
+    <TextView
+        android:id="@+id/barryId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前电量"/>
+
+    <ProgressBar
+        android:id="@+id/proBarId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="0"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
+    <TextView
+        android:id="@+id/tv_status"
+        android:text="电池状态"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_health"
+        android:text="电池健康情况"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
         android:id="@+id/customReceiverBt"
         android:layout_width="wrap_content"
