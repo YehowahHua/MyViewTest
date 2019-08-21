@@ -2,13 +2,15 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
+    android:background="#44ff0000"
+    android:layout_margin="3dp"
+    android:layout_height="72dp"
     >
     <TextView
         android:id="@+id/id_tv"
         android:text="abcd"
         android:gravity="center"
-        android:layout_width="match_parent"
+        android:layout_width="72dp"
         android:layout_height="match_parent"
         />
 </FrameLayout>
