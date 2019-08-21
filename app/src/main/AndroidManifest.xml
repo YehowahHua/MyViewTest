@@ -2,17 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.yehowah.myviewtest">
-    <uses-permission android:name="android.permission.BATTERY_STATS"
-        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
     <application
-        android:name=".YeApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.GlideTestActivity">
+
+        </activity>
         <activity android:name=".ui.ViewPathTestActivity" />
         <activity android:name=".ui.ViewPaintTestActivity" />
         <activity android:name=".ui.MyViewActivity" />
@@ -25,8 +37,7 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".receiver.BatteryLowReceiver">
+        <receiver android:name=".receiver.BatteryLowReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BATTERY_LOW" />
             </intent-filter>
@@ -34,12 +45,22 @@
 
         <activity android:name=".ui.ReceiverTestActivity" />
 
-        <receiver
-            android:name=".receiver.CustomReceiver">
+        <receiver android:name=".receiver.CustomReceiver">
             <intent-filter>
-                <action android:name="com.yehowah.custom.action"/>
+                <action android:name="com.yehowah.custom.action" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.yehowah.myviewtest.ui.GlideTestActivity.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
     </application>
 
 </manifest>
