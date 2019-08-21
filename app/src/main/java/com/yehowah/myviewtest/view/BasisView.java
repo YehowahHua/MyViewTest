@@ -43,8 +43,5 @@ public class BasisView extends View {
         paint.setColor(0x7EFFFF00);//黄色
         canvas.drawCircle(590,200,100, paint);
 
-
-
-
     }
 }

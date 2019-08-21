@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import com.yehowah.myviewtest.R;
+
+import com.yehowah.myviewtest.ui.GlideTestActivity;
 import com.yehowah.myviewtest.ui.MyViewActivity;
 import com.yehowah.myviewtest.ui.ReceiverTestActivity;
 import com.yehowah.myviewtest.ui.RecyclerTest1Activity;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button rxjavaBt;
     private Button viewBt;
     private Button receiverTestBt;
+    private Button glideStudyBt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewBt.setOnClickListener(this);
         rxjavaBt.setOnClickListener(this);
         receiverTestBt.setOnClickListener(this);
+        glideStudyBt = (Button) findViewById(R.id.glideStudyBt);
+        glideStudyBt.setOnClickListener(this);
     }
 
     @Override
@@ -50,6 +54,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.receiverTestBt:
                 Intent receiverIntent = new Intent(this, ReceiverTestActivity.class);
                 startActivity(receiverIntent);
+                break;
+            case R.id.glideStudyBt:
+                Intent glideIntent = new Intent(this, GlideTestActivity.class);
+                startActivity(glideIntent);
                 break;
         }
     }
